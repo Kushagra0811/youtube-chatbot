@@ -68,7 +68,6 @@ def run_chatbot(video_id, question):
     splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
     chunks = splitter.create_documents([full_transcript])
 
-    openai_api_key = st.secrets["OPENAI_API_KEY"]
     google_api_key = st.secrets["GOOGLE_API_KEY"]
 
     embeddings = GoogleGenerativeAIEmbeddings(
